@@ -1,0 +1,148 @@
+$cr:#ccc
+$bl:#000
+
+$cy:#0ac
+$cyd:#069
+$cym:#08a
+$cyb:#09b
+
+$np:#969
+$npb:#a7a
+
+$nr:#cf0000
+$no:#f50
+$ny:#ffc000
+$ng:#00ff33
+
+=borderrad($rad)
+        -moz-border-radius: $rad
+        border-radius: $rad
+
+=lingrad($bc,$ec)
+        background: $ec
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($bc), to($ec))
+        background: -webkit-linear-gradient(right, $bc, $ec)
+        background: -moz-linear-gradient(right, $bc, $ec)
+        background: -ms-linear-gradient(right, $bc, $ec)
+        background: -o-linear-gradient(right, $bc, $ec)
+        background: linear-gradient(right,$bc 0%,$ec 100%)
+
+=ltab($bc)
+        +lingrad($bl,$bc)
+        text-shadow: 0px 0px 4px $bc
+                
+
+body
+        color: $cr
+        width: 450px
+        font-weight: bold
+        background: $bl
+        margin-right: auto
+        margin-left: auto
+        text-align: center
+
+#menu
+        width: 30%
+        float: left
+        margin-right: 20
+        text-align: right
+
+#headln
+        width: 100%
+        text-align: center
+
+#ztxt
+        width: 65%
+        float: left
+        text-align: left
+        text-shadow: 0px 8px 8px $cy
+
+.rln
+        +lingrad($cy,$bl)
+        +borderrad(8px)
+        margin-bottom: 3px
+        padding-right: 5px
+
+.bln
+        margin-bottom: 3px
+        padding-right: 5px
+        text-shadow: 0px 0px 4px $cy
+
+.lln
+        @extend .bln
+        +borderrad(8px)
+        +lingrad($bl,$cyd)
+
+#la
+        +lingrad($bl,$cym)
+        text-shadow: 0px 0px 4px $cym
+
+#la
+        +ltab($cym)
+
+#lb
+        +ltab($cyb)
+
+#lc
+        +ltab($npb)
+
+#ld
+        +ltab($nr)
+
+
+#le
+        +ltab($no)
+
+#lf
+        +ltab($ny)
+
+#lg
+        +ltab($ng)
+
+#lh
+        +ltab($cyb)
+
+
+#li
+        +ltab($npb)
+
+#lj
+        +ltab($np)
+
+
+.rln
+        background-color: $cy
+
+.lln
+        background-color: $cyd
+
+
+#la
+        background-color: $cym
+
+#lb
+        background-color: $cyb
+
+#lc
+        background-color: $cym
+
+
+.pipe, .pipea
+        height: 1px
+        background: $cy
+        position: relative
+       
+.pipea
+        width: 10%
+        top: 1.2em
+
+.pipe
+        width: 89%
+        left: 9.2%
+
+
+#lkb
+        transform: rotate(45deg)
+        +lingrad($np,$npb)
+#lka
+        +lingrad($bl,$np)
